@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Owner;
 
 class OwnersController extends Controller
 {
@@ -22,7 +23,10 @@ class OwnersController extends Controller
      */
     public function index()
     {
-        dd("オーナー一覧");
+        $owners = Owner::select('id', 'name', 'email', 'created_at')
+        ->paginate(3);
+
+        return view('admin.owners.index',compact('owners'));
     }
 
     /**
@@ -32,7 +36,7 @@ class OwnersController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.owners.create');
     }
 
     /**
