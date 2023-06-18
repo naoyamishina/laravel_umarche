@@ -6,10 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Shop;
 
 class Owner extends Authenticatable
 {
     use HasFactory, SoftDeletes;
+
+    public function shop()
+    {
+    return $this->hasOne(Shop::class); 
+    }
 
     /**
      * The attributes that are mass assignable.
