@@ -141,6 +141,11 @@
   will-change: transform;
 }
 
+.swiper-container {
+  /* width: 600px; */
+  height: 300px;
+}
+
 /*
 ! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
 */

@@ -122,5 +122,5 @@
     </div>
   </div>
 
-  {{-- <script src="{{ mix('js/swiper.js')}}"></script> --}}
+  <script src="{{ mix('js/swiper.js')}}"></script>
 </x-app-layout>
