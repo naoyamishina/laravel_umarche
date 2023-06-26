@@ -30,7 +30,8 @@ class CartController extends Controller
         ->where('product_id', $request->product_id)->first(); //カートに商品があるか確認
 
         if($itemInCart){
-            $itemInCart->quantity += $request->quantity; //あれば数量を追加 $itemInCart->save();
+            $itemInCart->quantity += $request->quantity; //あれば数量を追加 
+            $itemInCart->save();
         } else {
             Cart::create([ // なければ新規作成
             'user_id' => Auth::id(),
@@ -40,5 +41,13 @@ class CartController extends Controller
         }
 
         return redirect()->route('user.cart.index');
+    }
+
+    public function delete($id) 
+    {
+        Cart::where('product_id', $id) 
+        ->where('user_id', Auth::id())->delete();
+
+        return redirect()->route('user.cart.index'); 
     }
 }
