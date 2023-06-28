@@ -9,6 +9,8 @@ use App\Models\PrimaryCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail; 
+use App\Mail\TestMail;
 
 class ItemController extends Controller
 {
@@ -30,8 +32,12 @@ class ItemController extends Controller
 
     public function index(Request $request)
     {
+        Mail::to('test@example.com')
+        ->send(new TestMail());
+
         $categories = PrimaryCategory::with('secondary')
         ->get();
+        
 
         $products = Product::availableItems()
         ->selectCategory($request->category ?? '0')
