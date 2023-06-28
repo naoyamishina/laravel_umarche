@@ -5,7 +5,7 @@
             </h2>
                 <form method="get" action="{{ route('user.items.index')}}">
                     <div class="lg:flex lg:justify-around">
-                        {{-- <div class="lg:flex items-center">
+                        <div class="lg:flex items-center">
                             <select name="category" class="mb-2 lg:mb-0 lg:mr-2">
                                 <option value="0" @if(\Request::get('category') === '0') selected @endif>全て</option>
                                 @foreach($categories as $category)
@@ -21,7 +21,7 @@
                                 <div><input name="keyword" class="border border-gray-500 py-2" placeholder="キーワードを入力"></div>
                                 <div><button class="ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">検索する</button></div>
                             </div>
-                        </div> --}}
+                        </div>
                     <div class="flex">
                         <div>
                             <span class="text-sm">表示順</span><br>
