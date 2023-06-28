@@ -53,7 +53,7 @@
                                 </option>
                             </select>
                         </div>
-                        {{-- <div>
+                        <div>
                             <span class="text-sm">表示件数</span><br>
                             <select id="pagination" name="pagination">
                                 <option value="20"
@@ -72,7 +72,7 @@
                                     @endif>100件
                                 </option>
                             </select>
-                        </div> --}}
+                        </div>
                     </div>
                 </div>
             </form>
@@ -100,10 +100,10 @@
                         @endforeach
                     
                     </div>
-                    {{-- {{ $products->appends([
+                    {{ $products->appends([
                         'sort' => \Request::get('sort'),
                         'pagination' => \Request::get('pagination')
-                    ])->links() }} --}}
+                    ])->links() }}
                 </div>
             </div>
         </div>
