@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail; 
 use App\Mail\TestMail;
-use App\Jobs\SendThanksMail;
 
 class ItemController extends Controller
 {
@@ -38,7 +37,7 @@ class ItemController extends Controller
         // ->send(new TestMail());
 
         // キューにジョブを入れて処理(非同期) 
-        SendThanksMail::dispatch();
+        // SendThanksMail::dispatch();
 
         $categories = PrimaryCategory::with('secondary')
         ->get();
